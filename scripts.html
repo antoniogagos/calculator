@@ -1,0 +1,57 @@
+<script src="calculator.js"></script>
+
+<script>
+  'use strict';
+
+  class CalculatorApp {
+
+    constructor() {
+      this.calc = new Calculator();
+      this.buttons = document.querySelectorAll('.buttons-row > div');
+      this.$result = document.querySelector('#result');
+      this.$operation = document.querySelector('#operation');
+      this._addEvents();
+    }
+
+    _addEvents() {
+      Array.from(this.buttons).forEach(function(btn) {
+        btn.addEventListener('click', this._onClickButton.bind(this));
+      }.bind(this));
+    }
+
+    _onClickButton(event) {
+      // http://stackoverflow.com/questions/5921413/difference-between-e-target-and-e-currenttarget
+      let symbol = event.currentTarget.innerText;
+
+      if (symbol === '=' || symbol === 'c') {
+        let result;
+
+        if (symbol === '=') {
+          result = this.calc.calculate();
+        } else {
+          this.calc.clear();
+          this.$operation.innerText = '';
+          result = '';
+        }
+
+        this.$result.innerText = Math.round(result * 100) / 100;
+      } else {
+        symbol = symbol.replace('x', '*').replace('÷', '/');
+        let isOperator = this.calc.isOperatorValid(symbol);
+
+        if (!isOperator && symbol !== '.') {
+          symbol = Number(symbol);
+        }
+
+        this.calc.add(symbol);
+        this.$operation.innerText = this.calc.operation;
+      }
+    }
+
+  }
+
+  window.onload = function() {
+    var myapp = new CalculatorApp();
+  };
+
+</script>

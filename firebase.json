@@ -1,0 +1,9 @@
+{
+  "firebase": "calculatore",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

@@ -1,0 +1,103 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f2f2f2;
+  color: #455A64;
+}
+
+.container {
+  background: white;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.display {
+  text-align: right;
+  padding: 20px;
+  height: 122px;
+  box-sizing: border-box;
+}
+
+#operation {
+  color: #999;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+#result {
+  font-size: 46px;
+  overflow:hidden;
+}
+
+.buttons {
+  height: calc(100% - 122px);
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.buttons-row {
+  height: 20%;
+}
+
+.buttons-row > div {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  cursor: default;
+  -webkit-user-select: none;
+}
+
+.buttons-row > .button-double {
+  width: 50%;
+}
+
+.button-highlight {
+  color: #03A9F4;
+}
+
+.button-highlight-max {
+  color: white;
+  background: linear-gradient(135deg, #64FFDA 0%, #03A9F4 75%);
+}
+
+.buttons-row > div:active {
+  background: #E3F2FD;
+}
+.buttons-row > .button-highlight-max:active{
+  background-image: -webkit-gradient(
+  	linear,
+  	left top,
+  	left bottom,
+  	color-stop(0, #2739D9),
+  	color-stop(1, #45E0FF)
+  );
+  background-image: -o-linear-gradient(bottom, #2739D9 0%, #45E0FF 100%);
+  background-image: -moz-linear-gradient(bottom, #2739D9 0%, #45E0FF 100%);
+  background-image: -webkit-linear-gradient(bottom, #2739D9 0%, #45E0FF 100%);
+  background-image: -ms-linear-gradient(bottom, #2739D9 0%, #45E0FF 100%);
+  background-image: linear-gradient(to bottom, #2739D9 0%, #45E0FF 100%);}
+
+
+
+/* Desktop */
+@media (min-width: 600px) {
+  .container {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 320px;
+    height: 500px;
+  }
+}
