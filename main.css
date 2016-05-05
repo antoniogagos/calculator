@@ -26,14 +26,15 @@ body {
 }
 
 #operation {
-  color: #999;
-  font-size: 20px;
-  overflow: hidden;
+  font-size: 46px;
+  overflow:scroll;
 }
 
 #result {
-  font-size: 46px;
-  overflow:hidden;
+  color: #999;
+  font-size: 20px;
+  overflow:scroll;
+  padding-top: 15px;
 }
 
 .buttons {
@@ -69,26 +70,17 @@ body {
   color: white;
   background: linear-gradient(135deg, #64FFDA 0%, #03A9F4 75%);
 }
-
 .buttons-row > div:active {
   background: #E3F2FD;
 }
-.buttons-row > .button-highlight-max:active{
-  background-image: -webkit-gradient(
-  	linear,
-  	left top,
-  	left bottom,
-  	color-stop(0, #2739D9),
-  	color-stop(1, #45E0FF)
-  );
-  background-image: -o-linear-gradient(bottom, #2739D9 0%, #45E0FF 100%);
-  background-image: -moz-linear-gradient(bottom, #2739D9 0%, #45E0FF 100%);
-  background-image: -webkit-linear-gradient(bottom, #2739D9 0%, #45E0FF 100%);
-  background-image: -ms-linear-gradient(bottom, #2739D9 0%, #45E0FF 100%);
-  background-image: linear-gradient(to bottom, #2739D9 0%, #45E0FF 100%);}
-
-
-
+.buttons-row > .button-highlight-max:active {
+    background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, #2739D9), color-stop(1, #45E0FF) );
+    background-image: -o-linear-gradient(bottom, #2739D9 0%, #45E0FF 100%);
+    background-image: -moz-linear-gradient(bottom, #2739D9 0%, #45E0FF 100%);
+    background-image: -webkit-linear-gradient(bottom, #2739D9 0%, #45E0FF 100%);
+    background-image: -ms-linear-gradient(bottom, #2739D9 0%, #45E0FF 100%);
+    background-image: linear-gradient(to bottom, #2739D9 0%, #45E0FF 100%);
+}
 /* Desktop */
 @media (min-width: 600px) {
   .container {
@@ -99,5 +91,8 @@ body {
     margin: auto;
     width: 320px;
     height: 500px;
+  }
+  #operation, #result {
+    overflow: hidden;
   }
 }

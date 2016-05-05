@@ -29,19 +29,22 @@ class Calculator {
       return;
     }
 
+
     // Solo puede haber un operador entre números.
     // ejemplo: 3+2, no puede ser 3+*2
     if (isLastCharAnOperator && isOperator) {
-      this.operation = this.operation.slice(0, -1);
+      this.operation += this.operation.slice(0, -1);
     }
 
     this.operation = this.operation + char;
   }
 
+
   calculate() {
     this.value = eval(this.operation);
     return this.value;
   }
+
 
   isOperatorValid(char) {
     return this._operators.indexOf(char) > -1;
